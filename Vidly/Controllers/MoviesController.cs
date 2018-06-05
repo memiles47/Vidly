@@ -26,14 +26,10 @@ namespace Vidly.Controllers
         public ActionResult Index(int? pageIndex, string sortBy)
         {
             if (!pageIndex.HasValue)
-            {
                 pageIndex = 1;
-            }
 
-            if (String.IsNullOrWhiteSpace(sortBy))
-            {
+            if (string.IsNullOrWhiteSpace(sortBy))
                 sortBy = "Name";
-            }
 
             return Content($"PageIndex = {pageIndex}, SortBy = {sortBy}");
         }
